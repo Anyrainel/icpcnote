@@ -1,12 +1,9 @@
 const int MAXN = 200100;//TODO
 const int INF = 0x3f3f3f3f;
-
 // destination, capacity
 vector<pair<int, int> > x[MAXN];
 
 // n must be total number of vertices
-// If too slow, try to do something obvious before call this function
-// This flow algorithm is level sensitive
 // The depth of the graph would effect run time a lot
 int max_flow(int s, int t, int n) {
     vector<int> ff(n + 1, 0);
@@ -15,11 +12,8 @@ int max_flow(int s, int t, int n) {
     vector<int> hh(n + 1, 0);
     vector<int> fi(n + 1, 0);
     
-    int i = 0, now, ans = 0;
+    int i = s, now = INF, ans = 0;
     hh[0] = n;
-    
-    i = s;
-    now = INF;
     
     while (h[s] < n) {
         ff[i] = now;

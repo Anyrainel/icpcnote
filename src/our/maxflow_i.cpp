@@ -1,11 +1,9 @@
 const int MAXN = 200100;//TODO
 const int INF = 0x3f3f3f3f;
-
 // destination, capacity
 vector<pair<int, int> > x[MAXN];
 
 // n must be total number of vertices
-// If too slow, try to do something obvious before call this function
 // This algorithm is not sensitive to the depth of the graph,
 // but to the number of augmenting path of course
 int max_flow(int s, int t, int n) {
@@ -14,11 +12,8 @@ int max_flow(int s, int t, int n) {
     vector<int> fi(n + 1, 0);
     vector<bool> z(n + 1, 0);
     
-    int i = 0, now, ans = 0;
-    
-    i = s;
-    now = INF;
-    
+    int i = s, now = INF, ans = 0;
+
     while (true) {
         z[i] = true;
         ff[i] = now;
