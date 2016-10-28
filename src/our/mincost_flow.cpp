@@ -1,17 +1,14 @@
 const int MAXN = 1100;//TODO
 const int INF = 0x3f3f3f3f;
-
 class node {
 public:
     int v, w, f, couple;
     node() { v = 0; w = 0; f = 0; }
     node(int V, int W, int F, int CC) {v = V; w = W; f = F; couple = CC;};
 };
-
 int flow, cost;
 int fa[MAXN], ff[MAXN];
 vector<node> x[MAXN];
-
 // s, t, capacity, cost
 int newnode(int a, int b, int c, int d) {
     node p(b, d, c, x[b].size());
@@ -29,8 +26,7 @@ int SPFA(int s, int t, int n) {
     Q.push(s);
     z[s] = true;
     while (!Q.empty()) {
-        int i = Q.front();
-        Q.pop();
+        int i = Q.front(); Q.pop();
         for (auto p = x[i].begin(); p != x[i].end(); ++p) {
             if (p->f > 0 && d[p->v] > d[i] + p->w) {
                 d[p->v] = d[i] + p->w;
@@ -56,7 +52,6 @@ int Min_Cost(int s, int t, int n) {
             if (p.f < now) now = p.f;
         }
         flow += now;
-        
         i = t;
         while (i != s) {
             x[fa[i]][ff[i]].f -= now;
