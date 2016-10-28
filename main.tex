@@ -1,0 +1,237 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{minitoc}
+\usepackage{fullpage,enumitem,amsmath,amssymb,graphicx,algpseudocode,algorithm,array}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{minted}
+%\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage[margin=12pt,top=30pt,headsep=6pt,headheight=12pt]{geometry}
+
+\title{icpclib}
+\author{Anyrainel}
+
+\setminted{%fontsize=\footnotesize,
+           frame=single,framesep=6pt,
+           linenos,numbersep=6pt,xleftmargin=24pt,
+           breaklines=true}
+\usemintedstyle{colorful}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Valiant ACM/ICPC Notebook}
+\rhead{\thepage/\pageref{LastPage}}
+\chead{\leftmark}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{\setstretch{0.1}}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{\setstretch{0.1}}
+
+\begin{document}
+
+\begingroup
+\let\cleardoublepage\clearpage
+\endgroup
+
+%\begin{multicols*}{2}
+
+  %\raggedcolumns  
+
+  \tableofcontents
+  \clearpage
+  \section{Simple Graph}
+  
+  \subsection{Maxflow Simple}
+  \inputminted{cpp}{src/our/maxflow_i.cpp}
+  \subsection{Maxflow Gap}
+  \inputminted{cpp}{src/our/maxflow_s.cpp}
+  \subsection{Mincost Maxflow}
+  \inputminted{cpp}{src/our/mincost_flow.cpp}
+  
+  \subsection{Max Match}
+  \inputminted{cpp}{src/our/max_matching.cpp}
+  \subsection{Max Weight Match}
+  \inputminted{cpp}{src/our/max_weight_matching.cpp}
+  
+  \subsection{Our SCC}
+  \inputminted{cpp}{src/our/strongly_connected_component.cpp}
+  
+  \subsection{Strongly Connected Component}
+  \inputminted{cpp}{src/strongly-connected-component.cpp}
+  
+  \subsection{2-SAT}
+  \inputminted{cpp}{src/2-sat.cpp}
+  
+  \section{Simple Math}
+  
+  \subsection{Mod Inverse}
+  \inputminted{cpp}{src/inverse.cpp}
+  
+  \subsection{Extended Euclid}
+  \inputminted{cpp}{src/extended-euclid.cpp}
+  
+  \subsection{Chinese Remainder Theorem}
+  \inputminted{cpp}{src/chinese-remainder.cpp}
+  
+  \subsection{Points under line}
+  \inputminted{cpp}{src/lattice-count.cpp}
+  
+  \subsection{Miller Rabin}
+  \inputminted{cpp}{src/miller-rabin.cpp}
+  
+  \subsection{Pollard Rho}
+  \inputminted{cpp}{src/pollard-rho.cpp}
+  
+  \section{Simple Geometry}
+  
+  \subsection{Basic Geometry}
+  \inputminted{cpp}{src/geom_library.cpp}
+  
+  \subsection{Other}
+  \inputminted{cpp}{src/our/advanced.cpp}
+  
+  \subsection{Closest Pair}
+  \inputminted{cpp}{src/our/close_pair.cpp}
+  
+  \subsection{Convex Hull}
+  \inputminted{cpp}{src/our/convex_hull.cpp}
+  
+  \section{Graph Algorithms}
+
+%   \subsection{SAP Maximum flow}
+%   \inputminted{cpp}{src/graph_maxflow.cpp}
+  
+  \subsection{Dinic's maximum flow}
+  \inputminted{cpp}{src/graph_dinic.cpp}
+
+%   \subsection{Min-cost max-flow}
+%   \inputminted{cpp}{src/graph_mincost_maxflow.cpp}
+
+%   \subsection{Min-cost max-flow 2}
+%   \inputminted{cpp}{src/graph_mincost_maxflow_2.cpp}
+
+  \subsection{Kuhn-Munkres bipartite matching}
+  \inputminted{cpp}{src/graph_KM.cpp}
+
+  \subsection{Hopcroft-Karp bipartite matching}
+  \inputminted{cpp}{src/graph_hopcroft_karp.cpp}
+
+  \subsection{Biconnected components}
+  \inputminted{cpp}{src/graph_bcc.cpp}
+
+%   \subsection{Tarjan's SCC, articulation points, bridges}
+%   \inputminted{cpp}{src/graph_scc.cpp}
+  
+%   \subsection{Global min-cut}
+%   \inputminted{cpp}{src/graph_stoer_wagner.cpp}
+
+  \subsection{Constructing Euler Tour}
+  \inputminted{cpp}{src/graph_euler.cpp}
+  
+  \section{Math}
+
+%  \subsection{Miller-Rabin primality testing \& Pollard-Rho factorization}
+%  \inputminted{cpp}{src/math_pollard_rho.cpp}
+  
+%   \subsection{Number theory identities}
+%  \textbf{Lucas' Theorem:} For non-negative integers $m$ and $n$ and a prime $p$,
+ 
+%  $$\binom{m}{n}\equiv\prod_{i=0}^k\binom{m_i}{n_i}\pmod p,$$
+% where
+% $$m=m_kp^k+m_{k-1}p^{k-1}+\cdots +m_1p+m_0$$
+% is the base $p$ representation of $m$, and similarly for $n$.
+  
+%   \inputminted{cpp}{src/math_finite_fields.cpp}
+  
+%   \subsection{Burnside's Lemma}
+%   Let $G$ be a finite group that acts on a set $X$. For each $g$ in $G$ let $X^g$ denote the set of elements in $X$ that are fixed by $g$, which means $X^g=\{x\in X| g(x)=x\}$. Burnside's lemma assers the following formula for the number of orbits, denoted $|X/G|$:
+%   \begin{align*}
+%   |X/G|=\frac{1}{|G|} \sum_{g\in G} |X^g|
+%   \end{align*}
+
+%   \subsection{NTT}
+%   \inputminted{cpp}{src/math_ntt.cpp}
+
+  \subsection{FFT}
+  \inputminted{cpp}{src/math_fft.cpp}
+
+  \subsection{Simplex}
+  \inputminted{cpp}{src/math_simplex.cpp}
+
+  \section{String Algorithms}
+
+  \subsection{KMP}
+  \inputminted{cpp}{src/kmp.cpp}
+
+  \subsection{Aho-Corasick trie/automaton}
+  \inputminted{cpp}{src/ac-automation.cpp}
+
+  %\subsection{Suffix array}
+  %\inputminted{cpp}{src/string_SA.cpp}
+
+  %\subsection{Suffix array}
+  %\inputminted{cpp}{src/string_SA_nlogn_pear.cpp}
+
+%   \subsection{Permuted LCP}
+%   \inputminted{cpp}{src/string_kasai.cpp}
+  
+  %\subsection{Suffix tree}
+  %\inputminted{cpp}{src/string_ukkonen.cpp}
+
+  %\subsection{Suffix automaton}
+  %\inputminted{cpp}{src/string_suffix_automaton.cpp}
+  
+  %\subsection{Z-function}
+  %\inputminted{cpp}{src/string_z_function.cpp}
+
+  \section{Data structures}
+
+%   \subsection{Dynamic convex hull}
+%   \inputminted{cpp}{src/ds_dynamic_convex_hull.cpp}
+
+%   \subsection{Treap}
+%   \inputminted{cpp}{src/ds_treap.cpp}
+
+  \subsection{Splay tree}
+  \inputminted{cpp}{src/ds_splay_tree.cpp}
+
+%   \subsection{Link-cut tree}
+%   \inputminted{cpp}{src/ds_link_cut_tree.cpp}
+
+%   \subsection{Centroid decomposition}
+%   \inputminted{cpp}{src/ds_centroid_decomposition.cpp}
+
+%   \subsection{Heavy-light decomposition}
+%   \inputminted{cpp}{src/ds_heavy_light_decomposition.cpp}
+
+%   \subsection{Hash table}
+%   \inputminted{cpp}{src/ds_hash_table.cpp}
+  
+  \subsection{KD-tree}
+  \inputminted{cpp}{src/ds_KDTree.cpp}
+  
+  \subsection{PB DS}
+  \inputminted{cpp}{src/ds_pbds.cpp}
+
+  \section{Misc}
+
+%   \subsection{Virtual tree DP}
+%   \inputminted{cpp}{src/misc_virtual_tree.cpp}
+
+  \subsection{Day of Week}
+  \inputminted{cpp}{src/what-day-is-today.cpp}
+  
+  \subsection{LCA - Least Common Ancestor}
+  \inputminted{cpp}{src/least-common-ancestor.cpp}
+
+  \subsection{Priority Queue}
+  \inputminted{cpp}{src/priority_queue.cpp}
+
+%\end{multicols*}
+
+\end{document}
+
